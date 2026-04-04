@@ -693,5 +693,42 @@ export function transformDom(doc: Document, hasDoctype: boolean = false): Transf
   const { document: afterNormalize, warnings: normalizeWarnings } = normalizeHtmlStructure(afterTags, hasDoctype);
   allWarnings.push(...normalizeWarnings);
 
+  wrapBodyInTable(afterNormalize);
+
   return { document: afterNormalize, warnings: allWarnings, hasDoctype };
+}
+
+function wrapBodyInTable(doc: Document): void {
+  const body = doc.body;
+  if (!body) return;
+
+  const children = Array.from(body.children);
+  if (children.length === 0) return;
+
+  const isAlreadyWrapped =
+    children.length === 1 &&
+    children[0].tagName.toLowerCase() === 'table' &&
+    children[0].getAttribute('role') === 'presentation';
+
+  if (isAlreadyWrapped) return;
+
+  const wrapper = doc.createElement('table');
+  wrapper.setAttribute('role', 'presentation');
+  wrapper.setAttribute('width', '100%');
+  wrapper.setAttribute('cellpadding', '0');
+  wrapper.setAttribute('cellspacing', '0');
+  wrapper.setAttribute('border', '0');
+  wrapper.setAttribute('style', 'width: 100%; border-collapse: collapse;');
+
+  const tr = doc.createElement('tr');
+  const td = doc.createElement('td');
+  td.setAttribute('style', 'padding: 0;');
+
+  children.forEach((child) => {
+    td.appendChild(child);
+  });
+
+  tr.appendChild(td);
+  wrapper.appendChild(tr);
+  body.appendChild(wrapper);
 }

@@ -464,87 +464,211 @@ body {
 
 .doodle {
   position: absolute;
-  opacity: 0.08;
+  opacity: 0.15;
   color: var(--color-accent);
 }
 
 .doodle-envelope {
-  width: 48px;
-  height: 48px;
-  top: 8%;
-  left: 5%;
+  width: 64px;
+  height: 64px;
+  top: 5%;
+  left: 2%;
   animation: doodle-float 6s ease-in-out infinite;
 }
 
 .doodle-plane {
-  width: 40px;
-  height: 40px;
-  top: 12%;
-  right: 8%;
+  width: 56px;
+  height: 56px;
+  top: 8%;
+  right: 2%;
   animation: doodle-float 7s ease-in-out infinite 1s;
   transform: rotate(-15deg);
 }
 
 .doodle-at {
-  width: 36px;
-  height: 36px;
-  bottom: 15%;
-  left: 3%;
+  width: 48px;
+  height: 48px;
+  bottom: 12%;
+  left: 1%;
   animation: doodle-float 8s ease-in-out infinite 2s;
 }
 
 .doodle-check {
-  width: 32px;
-  height: 32px;
-  top: 25%;
-  right: 3%;
+  width: 44px;
+  height: 44px;
+  top: 20%;
+  right: 1%;
   animation: doodle-float 5s ease-in-out infinite 0.5s;
 }
 
 .doodle-code {
-  width: 36px;
-  height: 36px;
-  bottom: 20%;
-  right: 5%;
+  width: 48px;
+  height: 48px;
+  bottom: 15%;
+  right: 2%;
   animation: doodle-float 7s ease-in-out infinite 1.5s;
 }
 
 .doodle-dots {
-  top: 50%;
-  left: 2%;
+  top: 45%;
+  left: 0;
   display: grid;
-  grid-template-columns: repeat(3, 8px);
-  gap: 8px;
+  grid-template-columns: repeat(3, 10px);
+  gap: 10px;
   animation: doodle-float 6s ease-in-out infinite 3s;
 }
 
 .doodle-dots .dot {
-  width: 6px;
-  height: 6px;
+  width: 8px;
+  height: 8px;
   border-radius: 50%;
   background: var(--color-accent);
-  opacity: 0.12;
+  opacity: 0.2;
 }
 
 .doodle-plus {
-  width: 24px;
-  height: 24px;
-  top: 40%;
-  left: 8%;
+  width: 32px;
+  height: 32px;
+  top: 35%;
+  left: 4%;
   animation: doodle-float 9s ease-in-out infinite 1s;
 }
 
 .doodle-mail-badge {
-  width: 44px;
-  height: 44px;
-  bottom: 8%;
-  right: 12%;
+  width: 56px;
+  height: 56px;
+  bottom: 5%;
+  right: 5%;
   animation: doodle-float 6s ease-in-out infinite 2.5s;
 }
 
-@keyframes doodle-float {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-10px); }
+@keyframes doodle-float-1 {
+  0%, 100% { transform: translate(0, 0) rotate(0deg); }
+  25% { transform: translate(15px, -20px) rotate(5deg); }
+  50% { transform: translate(-10px, -35px) rotate(-3deg); }
+  75% { transform: translate(-20px, -10px) rotate(4deg); }
+}
+
+@keyframes doodle-float-2 {
+  0%, 100% { transform: translate(0, 0) rotate(-15deg); }
+  25% { transform: translate(-20px, 15px) rotate(-10deg); }
+  50% { transform: translate(10px, -25px) rotate(-20deg); }
+  75% { transform: translate(25px, 10px) rotate(-12deg); }
+}
+
+@keyframes doodle-float-3 {
+  0%, 100% { transform: translate(0, 0) rotate(0deg); }
+  25% { transform: translate(20px, 10px) rotate(8deg); }
+  50% { transform: translate(-15px, 20px) rotate(-5deg); }
+  75% { transform: translate(-25px, -15px) rotate(6deg); }
+}
+
+@keyframes doodle-float-4 {
+  0%, 100% { transform: translate(0, 0) rotate(0deg); }
+  25% { transform: translate(-25px, -10px) rotate(-6deg); }
+  50% { transform: translate(15px, -30px) rotate(4deg); }
+  75% { transform: translate(20px, 15px) rotate(-8deg); }
+}
+
+@keyframes doodle-float-5 {
+  0%, 100% { transform: translate(0, 0) rotate(0deg); }
+  25% { transform: translate(10px, 25px) rotate(7deg); }
+  50% { transform: translate(-20px, 10px) rotate(-4deg); }
+  75% { transform: translate(-15px, -20px) rotate(5deg); }
+}
+
+@keyframes doodle-float-6 {
+  0%, 100% { transform: translate(0, 0); }
+  25% { transform: translate(18px, -12px); }
+  50% { transform: translate(-12px, -22px); }
+  75% { transform: translate(-22px, 8px); }
+}
+
+@keyframes doodle-float-7 {
+  0%, 100% { transform: translate(0, 0) rotate(0deg); }
+  25% { transform: translate(-18px, 20px) rotate(10deg); }
+  50% { transform: translate(22px, -15px) rotate(-5deg); }
+  75% { transform: translate(12px, 18px) rotate(8deg); }
+}
+
+@keyframes doodle-float-8 {
+  0%, 100% { transform: translate(0, 0) rotate(0deg); }
+  25% { transform: translate(12px, -18px) rotate(-7deg); }
+  50% { transform: translate(-18px, 12px) rotate(5deg); }
+  75% { transform: translate(-10px, -22px) rotate(-4deg); }
+}
+
+.doodle-envelope {
+  width: 64px;
+  height: 64px;
+  top: 8%;
+  left: 8%;
+  animation: doodle-float-1 8s ease-in-out infinite;
+}
+
+.doodle-plane {
+  width: 56px;
+  height: 56px;
+  top: 5%;
+  right: 12%;
+  animation: doodle-float-2 9s ease-in-out infinite 1s;
+}
+
+.doodle-at {
+  width: 48px;
+  height: 48px;
+  bottom: 10%;
+  left: 12%;
+  animation: doodle-float-3 10s ease-in-out infinite 2s;
+}
+
+.doodle-check {
+  width: 44px;
+  height: 44px;
+  top: 30%;
+  right: 6%;
+  animation: doodle-float-4 7s ease-in-out infinite 0.5s;
+}
+
+.doodle-code {
+  width: 48px;
+  height: 48px;
+  bottom: 18%;
+  right: 10%;
+  animation: doodle-float-5 9s ease-in-out infinite 1.5s;
+}
+
+.doodle-dots {
+  top: 55%;
+  left: 6%;
+  display: grid;
+  grid-template-columns: repeat(3, 10px);
+  gap: 10px;
+  animation: doodle-float-6 8s ease-in-out infinite 3s;
+}
+
+.doodle-dots .dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--color-accent);
+  opacity: 0.2;
+}
+
+.doodle-plus {
+  width: 32px;
+  height: 32px;
+  top: 15%;
+  left: 2%;
+  animation: doodle-float-7 11s ease-in-out infinite 1s;
+}
+
+.doodle-mail-badge {
+  width: 56px;
+  height: 56px;
+  bottom: 5%;
+  right: 2%;
+  animation: doodle-float-8 8s ease-in-out infinite 2.5s;
 }
 
 .landing-hero-title {
