@@ -103,6 +103,35 @@ const cssTransforms: Array<{
   },
 ];
 
+function transformPositionProperties(css: string): { css: string; warnings: Warning[] } {
+  const warnings: Warning[] = [];
+  let result = css;
+
+  const positionMatch = result.match(/position\s*:\s*(static|relative|absolute|fixed|sticky)/i);
+  if (!positionMatch) return { css, warnings };
+
+  const positionValue = positionMatch[1].toLowerCase();
+
+  if (positionValue === 'static') {
+    const offsetProps = ['top', 'left', 'right', 'bottom', 'z-index'];
+    offsetProps.forEach((prop) => {
+      const pattern = new RegExp(`${prop}\\s*:\\s*[^;]+;?`, 'gi');
+      if (pattern.test(result)) {
+        warnings.push(createWarning('info', 'css', `Removed ${prop} (has no effect with position:static in email)`));
+        result = result.replace(pattern, '');
+      }
+    });
+  } else if (positionValue === 'relative') {
+    const zMatch = result.match(/z-index\s*:\s*[^;]+;?/gi);
+    if (zMatch) {
+      warnings.push(createWarning('warning', 'css', 'z-index has limited support in email clients even with position:relative'));
+      result = result.replace(/z-index\s*:\s*[^;]+;?/gi, '');
+    }
+  }
+
+  return { css: result, warnings };
+}
+
 const pseudoClassRemovals = [
   /:hover/gi,
   /:focus/gi,
@@ -178,6 +207,10 @@ export function transformCss(css: string): { css: string; warnings: Warning[] } 
     }
   });
 
+  const { css: positionCss, warnings: positionWarnings } = transformPositionProperties(result);
+  result = positionCss;
+  warnings.push(...positionWarnings);
+
   result = result.replace(/:[a-z-]+(?=\s*\{)/gi, (match) => {
     const pseudo = match.slice(1);
     const validPseudos = ['first-child', 'last-child', 'only-child', 'first-of-type', 'last-of-type', 'only-of-type', 'not', 'nth-child', 'nth-of-type', 'nth-last-child', 'nth-last-of-type'];
@@ -209,6 +242,10 @@ export function transformInlineStyles(styleAttr: string): { style: string; warni
       result = result.replace(pattern, transform);
     }
   });
+
+  const { css: positionCss, warnings: positionWarnings } = transformPositionProperties(result);
+  result = positionCss;
+  warnings.push(...positionWarnings);
 
   return { style: result, warnings };
 }

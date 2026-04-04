@@ -6,7 +6,7 @@ const VOID_ELEMENTS = new Set([
 export function formatHtml(html: string, indent: string = '  '): string {
   if (!html.trim()) return html;
 
-  let formatted = '';
+  const hasDoctype = /^<!DOCTYPE\s+html/i.test(html.trim());
 
   const parser = new DOMParser();
   const doc = parser.parseFromString(html, 'text/html');
@@ -56,6 +56,11 @@ export function formatHtml(html: string, indent: string = '  '): string {
     return result;
   }
 
-  formatted = formatNode(root, 0);
-  return formatted.trim();
+  let formatted = formatNode(root, 0).trim();
+
+  if (hasDoctype) {
+    formatted = `<!DOCTYPE html>\n${formatted}`;
+  }
+
+  return formatted;
 }

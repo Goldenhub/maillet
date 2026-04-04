@@ -53,6 +53,10 @@ export function PlaygroundPage() {
     setInput('');
   }, [setInput]);
 
+  const handleReset = useCallback(() => {
+    setInput(DEFAULT_TEMPLATE);
+  }, [setInput]);
+
   const handleDismiss = useCallback((id: string) => {
     setDismissedIds((prev) => [...prev, id]);
   }, [setDismissedIds]);
@@ -68,6 +72,7 @@ export function PlaygroundPage() {
           onCompile={compile}
           onCopy={handleCopy}
           onClear={handleClear}
+          onReset={handleReset}
           backLink="/"
         />
         <div className="main-content">

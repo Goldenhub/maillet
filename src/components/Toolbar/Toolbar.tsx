@@ -8,10 +8,11 @@ interface ToolbarProps {
   onCompile: () => void;
   onCopy: () => void;
   onClear: () => void;
+  onReset: () => void;
   backLink?: string;
 }
 
-export function Toolbar({ warningCount, isCompiling, onCompile, onCopy, onClear, backLink }: ToolbarProps) {
+export function Toolbar({ warningCount, isCompiling, onCompile, onCopy, onClear, onReset, backLink }: ToolbarProps) {
   const [compileFeedback, setCompileFeedback] = useState(false);
   const [copyFeedback, setCopyFeedback] = useState(false);
   const { mode, cycleTheme } = useTheme();
@@ -87,6 +88,9 @@ export function Toolbar({ warningCount, isCompiling, onCompile, onCopy, onClear,
         </button>
         <button className="toolbar-btn" onClick={onClear} type="button">
           Clear
+        </button>
+        <button className="toolbar-btn" onClick={onReset} type="button">
+          Reset
         </button>
       </div>
     </div>
