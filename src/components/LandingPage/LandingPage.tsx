@@ -6,18 +6,16 @@ export function LandingPage() {
   const [activeFeature, setActiveFeature] = useState<number | null>(null);
   const { mode, cycleTheme } = useTheme();
 
-  const themeIcon = mode === 'light' ? 'sun' : mode === 'dark' ? 'moon' : 'monitor';
+  const themeIcon = mode === "light" ? "sun" : mode === "dark" ? "moon" : "monitor";
 
   return (
     <div className="landing">
       <nav className="landing-nav">
         <div className="landing-nav-inner">
-          <div className="landing-logo">
-            Maillet
-          </div>
-          <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+          <div className="landing-logo">Maillet</div>
+          <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
             <button className="theme-toggle" onClick={cycleTheme} type="button" title={`Theme: ${mode}`}>
-              {themeIcon === 'sun' && (
+              {themeIcon === "sun" && (
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                   <circle cx="12" cy="12" r="5" />
                   <line x1="12" y1="1" x2="12" y2="3" />
@@ -30,12 +28,12 @@ export function LandingPage() {
                   <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
                 </svg>
               )}
-              {themeIcon === 'moon' && (
+              {themeIcon === "moon" && (
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                   <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
                 </svg>
               )}
-              {themeIcon === 'monitor' && (
+              {themeIcon === "monitor" && (
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                   <rect x="2" y="3" width="20" height="14" rx="2" ry="2" />
                   <line x1="8" y1="21" x2="16" y2="21" />
@@ -52,12 +50,8 @@ export function LandingPage() {
 
       <section className="landing-hero">
         <div className="landing-hero-content">
-          <h1 className="landing-hero-title">
-            Write modern HTML/CSS.
-            <br />
-            Ship email-safe templates.
-          </h1>
-          <p className="landing-hero-subtitle">Transform your modern HTML and CSS into email-friendly code that works across all clients. With real-time warnings and auto-fixes for unsupported features.</p>
+          <h1 className="landing-hero-title">Stop fighting email clients.</h1>
+          <p className="landing-hero-subtitle">Write modern HTML/CSS and let Maillet compile it into reliable, cross-client email code — instantly.</p>
           <div className="landing-hero-actions">
             <Link className="landing-cta-btn" to="/playground">
               Start Compiling
@@ -260,8 +254,8 @@ export function LandingPage() {
           <a className="footer-link" href="https://github.com/goldenhub" target="_blank" rel="noopener noreferrer">
             Goldenhub
           </a>
-          . All processing happens in your browser.
         </p>
+        <p>All processing happens in your browser.</p>
       </footer>
     </div>
   );
