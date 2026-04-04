@@ -83,30 +83,26 @@ export function LandingPage() {
                 <div className="landing-preview-code">
                   <code>
                     <span className="code-tag">&lt;style&gt;</span>
-                    {"\n"}  <span className="code-attr">.header</span> {`{`}
-                    {"\n"}    <span className="code-prop">background</span>: <span className="code-value">#4F46E5</span>;
-                    {"\n"}    <span className="code-prop">color</span>: <span className="code-value">#fff</span>;
-                    {"\n"}    <span className="code-prop">padding</span>: <span className="code-value">24px</span>;
-                    {"\n"}    <span className="code-prop">text-align</span>: <span className="code-value">center</span>;
-                    {"\n"}  {`}`}
-                    {"\n"}  <span className="code-attr">.cta</span> {`{`}
-                    {"\n"}    <span className="code-prop">display</span>: <span className="code-value">inline-block</span>;
-                    {"\n"}    <span className="code-prop">padding</span>: <span className="code-value">12px 24px</span>;
-                    {"\n"}    <span className="code-prop">background</span>: <span className="code-value">#10B981</span>;
-                    {"\n"}    <span className="code-prop">color</span>: <span className="code-value">#fff</span>;
-                    {"\n"}    <span className="code-prop">text-decoration</span>: <span className="code-value">none</span>;
-                    {"\n"}    <span className="code-prop">border-radius</span>: <span className="code-value">6px</span>;
-                    {"\n"}  {`}`}
-                    {"\n"}<span className="code-tag">&lt;/style&gt;</span>
+                    {"\n"} <span className="code-attr">.header</span> {`{`}
+                    {"\n"} <span className="code-prop">background</span>: <span className="code-value">#4F46E5</span>;{"\n"} <span className="code-prop">color</span>: <span className="code-value">#fff</span>;{"\n"} <span className="code-prop">padding</span>: <span className="code-value">24px</span>;{"\n"} <span className="code-prop">text-align</span>: <span className="code-value">center</span>;{"\n"} {`}`}
+                    {"\n"} <span className="code-attr">.cta</span> {`{`}
+                    {"\n"} <span className="code-prop">display</span>: <span className="code-value">inline-block</span>;{"\n"} <span className="code-prop">padding</span>: <span className="code-value">12px 24px</span>;{"\n"} <span className="code-prop">background</span>: <span className="code-value">#10B981</span>;{"\n"} <span className="code-prop">color</span>: <span className="code-value">#fff</span>;{"\n"} <span className="code-prop">text-decoration</span>: <span className="code-value">none</span>;{"\n"} <span className="code-prop">border-radius</span>: <span className="code-value">6px</span>;{"\n"} {`}`}
                     {"\n"}
-                    {"\n"}<span className="code-tag">&lt;div</span> <span className="code-attr">class</span>=<span className="code-string">"header"</span><span className="code-tag">&gt;</span>
-                    {"\n"}  <span className="code-tag">&lt;h1&gt;</span>Welcome to Maillet<span className="code-tag">&lt;/h1&gt;</span>
-                    {"\n"}  <span className="code-tag">&lt;p&gt;</span>Your email, compiled.<span className="code-tag">&lt;/p&gt;</span>
-                    {"\n"}<span className="code-tag">&lt;/div&gt;</span>
+                    <span className="code-tag">&lt;/style&gt;</span>
                     {"\n"}
-                    {"\n"}<span className="code-tag">&lt;a</span> <span className="code-attr">href</span>=<span className="code-string">"#"</span> <span className="code-attr">class</span>=<span className="code-string">"cta"</span><span className="code-tag">&gt;</span>
-                    {"\n"}  Get Started →
-                    {"\n"}<span className="code-tag">&lt;/a&gt;</span>
+                    {"\n"}
+                    <span className="code-tag">&lt;div</span> <span className="code-attr">class</span>=<span className="code-string">"header"</span>
+                    <span className="code-tag">&gt;</span>
+                    {"\n"} <span className="code-tag">&lt;h1&gt;</span>Welcome to Maillet<span className="code-tag">&lt;/h1&gt;</span>
+                    {"\n"} <span className="code-tag">&lt;p&gt;</span>Your email, compiled.<span className="code-tag">&lt;/p&gt;</span>
+                    {"\n"}
+                    <span className="code-tag">&lt;/div&gt;</span>
+                    {"\n"}
+                    {"\n"}
+                    <span className="code-tag">&lt;a</span> <span className="code-attr">href</span>=<span className="code-string">"#"</span> <span className="code-attr">class</span>=<span className="code-string">"cta"</span>
+                    <span className="code-tag">&gt;</span>
+                    {"\n"} Get Started →{"\n"}
+                    <span className="code-tag">&lt;/a&gt;</span>
                   </code>
                 </div>
               </div>
@@ -123,9 +119,7 @@ export function LandingPage() {
                     <p>Your email, compiled.</p>
                   </div>
                   <div className="email-body">
-                    <p style={{ margin: '0 0 16px', fontSize: '13px', color: '#666' }}>
-                      Your modern HTML & CSS has been compiled into email-safe code.
-                    </p>
+                    <p style={{ margin: "0 0 16px", fontSize: "13px", color: "#666" }}>Your modern HTML & CSS has been compiled into email-safe code.</p>
                     <a className="email-cta" href="#">
                       Get Started →
                     </a>
@@ -277,9 +271,12 @@ export function LandingPage() {
           <svg className="footer-heart" width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
             <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
           </svg>{" "}
-          by{" "}
+          by Golden{" "}
           <a className="footer-link" href="https://github.com/goldenhub" target="_blank" rel="noopener noreferrer">
-            Goldenhub
+            Github
+          </a>
+          <a className="footer-link" href="https://x.com/gazu_chi" target="_blank" rel="noopener noreferrer">
+            X
           </a>
         </p>
         <p>All processing happens in your browser.</p>
