@@ -443,7 +443,8 @@ body {
 .landing-hero {
   max-width: 1200px;
   margin: 0 auto;
-  padding: var(--spacing-2xl) var(--spacing-md);
+  padding: 100px var(--spacing-md);
+  min-height: calc(100vh - 200px);
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: var(--spacing-xl);
