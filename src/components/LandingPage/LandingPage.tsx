@@ -80,24 +80,31 @@ export function LandingPage() {
               <div className="landing-preview-editor">
                 <div className="landing-preview-code">
                   <code>
-                    <span className="code-tag">&lt;div</span> <span className="code-attr">style</span>=<span className="code-string">"display: flex;"</span>
-                    <span className="code-tag">&gt;</span>
-                    {"\n"} <span className="code-tag">&lt;div&gt;</span>Column A<span className="code-tag">&lt;/div&gt;</span>
-                    {"\n"} <span className="code-tag">&lt;div&gt;</span>Column B<span className="code-tag">&lt;/div&gt;</span>
+                    <span className="code-tag">&lt;style&gt;</span>
+                    {"\n"}  <span className="code-attr">.header</span> {`{`}
+                    {"\n"}    <span className="code-prop">background</span>: <span className="code-value">#4F46E5</span>;
+                    {"\n"}    <span className="code-prop">color</span>: <span className="code-value">#fff</span>;
+                    {"\n"}    <span className="code-prop">padding</span>: <span className="code-value">24px</span>;
+                    {"\n"}    <span className="code-prop">text-align</span>: <span className="code-value">center</span>;
+                    {"\n"}  {`}`}
+                    {"\n"}  <span className="code-attr">.cta</span> {`{`}
+                    {"\n"}    <span className="code-prop">display</span>: <span className="code-value">inline-block</span>;
+                    {"\n"}    <span className="code-prop">padding</span>: <span className="code-value">12px 24px</span>;
+                    {"\n"}    <span className="code-prop">background</span>: <span className="code-value">#10B981</span>;
+                    {"\n"}    <span className="code-prop">color</span>: <span className="code-value">#fff</span>;
+                    {"\n"}    <span className="code-prop">text-decoration</span>: <span className="code-value">none</span>;
+                    {"\n"}    <span className="code-prop">border-radius</span>: <span className="code-value">6px</span>;
+                    {"\n"}  {`}`}
+                    {"\n"}<span className="code-tag">&lt;/style&gt;</span>
                     {"\n"}
-                    <span className="code-tag">&lt;/div&gt;</span>
+                    {"\n"}<span className="code-tag">&lt;div</span> <span className="code-attr">class</span>=<span className="code-string">"header"</span><span className="code-tag">&gt;</span>
+                    {"\n"}  <span className="code-tag">&lt;h1&gt;</span>Welcome to Maillet<span className="code-tag">&lt;/h1&gt;</span>
+                    {"\n"}  <span className="code-tag">&lt;p&gt;</span>Your email, compiled.<span className="code-tag">&lt;/p&gt;</span>
+                    {"\n"}<span className="code-tag">&lt;/div&gt;</span>
                     {"\n"}
-                    {"\n"}
-                    <span className="code-comment">{"// Compiles to →"}</span>
-                    {"\n"}
-                    <span className="code-tag">&lt;table</span> <span className="code-attr">role</span>=<span className="code-string">"presentation"</span>
-                    <span className="code-tag">&gt;</span>
-                    {"\n"} <span className="code-tag">&lt;tr&gt;</span>
-                    {"\n"} <span className="code-tag">&lt;td&gt;</span>Column A<span className="code-tag">&lt;/td&gt;</span>
-                    {"\n"} <span className="code-tag">&lt;td&gt;</span>Column B<span className="code-tag">&lt;/td&gt;</span>
-                    {"\n"} <span className="code-tag">&lt;/tr&gt;</span>
-                    {"\n"}
-                    <span className="code-tag">&lt;/table&gt;</span>
+                    {"\n"}<span className="code-tag">&lt;a</span> <span className="code-attr">href</span>=<span className="code-string">"#"</span> <span className="code-attr">class</span>=<span className="code-string">"cta"</span><span className="code-tag">&gt;</span>
+                    {"\n"}  Get Started →
+                    {"\n"}<span className="code-tag">&lt;/a&gt;</span>
                   </code>
                 </div>
               </div>
@@ -108,10 +115,21 @@ export function LandingPage() {
               </div>
               <div className="landing-preview-output">
                 <div className="landing-preview-output-label">Compiled Output</div>
-                <div className="landing-preview-table">
-                  <div className="landing-table-row">
-                    <div className="landing-table-cell">Column A</div>
-                    <div className="landing-table-cell">Column B</div>
+                <div className="landing-email-preview">
+                  <div className="email-header">
+                    <h3>Welcome to Maillet</h3>
+                    <p>Your email, compiled.</p>
+                  </div>
+                  <div className="email-body">
+                    <p style={{ margin: '0 0 16px', fontSize: '13px', color: '#666' }}>
+                      Your modern HTML & CSS has been compiled into email-safe code.
+                    </p>
+                    <a className="email-cta" href="#">
+                      Get Started →
+                    </a>
+                  </div>
+                  <div className="email-footer">
+                    <p>© 2026 Maillet · All rights reserved</p>
                   </div>
                 </div>
               </div>
