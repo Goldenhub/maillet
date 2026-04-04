@@ -449,6 +449,102 @@ body {
   grid-template-columns: 1fr 1fr;
   gap: var(--spacing-xl);
   align-items: center;
+  position: relative;
+  overflow: visible;
+}
+
+/* Doodles */
+.hero-doodles {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.doodle {
+  position: absolute;
+  opacity: 0.08;
+  color: var(--color-accent);
+}
+
+.doodle-envelope {
+  width: 48px;
+  height: 48px;
+  top: 8%;
+  left: 5%;
+  animation: doodle-float 6s ease-in-out infinite;
+}
+
+.doodle-plane {
+  width: 40px;
+  height: 40px;
+  top: 12%;
+  right: 8%;
+  animation: doodle-float 7s ease-in-out infinite 1s;
+  transform: rotate(-15deg);
+}
+
+.doodle-at {
+  width: 36px;
+  height: 36px;
+  bottom: 15%;
+  left: 3%;
+  animation: doodle-float 8s ease-in-out infinite 2s;
+}
+
+.doodle-check {
+  width: 32px;
+  height: 32px;
+  top: 25%;
+  right: 3%;
+  animation: doodle-float 5s ease-in-out infinite 0.5s;
+}
+
+.doodle-code {
+  width: 36px;
+  height: 36px;
+  bottom: 20%;
+  right: 5%;
+  animation: doodle-float 7s ease-in-out infinite 1.5s;
+}
+
+.doodle-dots {
+  top: 50%;
+  left: 2%;
+  display: grid;
+  grid-template-columns: repeat(3, 8px);
+  gap: 8px;
+  animation: doodle-float 6s ease-in-out infinite 3s;
+}
+
+.doodle-dots .dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--color-accent);
+  opacity: 0.12;
+}
+
+.doodle-plus {
+  width: 24px;
+  height: 24px;
+  top: 40%;
+  left: 8%;
+  animation: doodle-float 9s ease-in-out infinite 1s;
+}
+
+.doodle-mail-badge {
+  width: 44px;
+  height: 44px;
+  bottom: 8%;
+  right: 12%;
+  animation: doodle-float 6s ease-in-out infinite 2.5s;
+}
+
+@keyframes doodle-float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
 }
 
 .landing-hero-title {

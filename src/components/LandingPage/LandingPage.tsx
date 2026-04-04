@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { useTheme } from "../../hooks/useTheme";
+import { Doodles } from "../Doodles";
 
 export function LandingPage() {
   const [activeFeature, setActiveFeature] = useState<number | null>(null);
@@ -49,6 +50,7 @@ export function LandingPage() {
       </nav>
 
       <section className="landing-hero">
+        <Doodles />
         <div className="landing-hero-content">
           <h1 className="landing-hero-title">Stop fighting email clients.</h1>
           <p className="landing-hero-subtitle">Write modern HTML/CSS and let Maillet compile it into reliable, cross-client email code — instantly.</p>
