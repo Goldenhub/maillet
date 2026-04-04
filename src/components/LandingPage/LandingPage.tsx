@@ -52,6 +52,13 @@ export function LandingPage() {
         <div className="landing-hero-content">
           <h1 className="landing-hero-title">Stop fighting email clients.</h1>
           <p className="landing-hero-subtitle">Write modern HTML/CSS and let Maillet compile it into reliable, cross-client email code — instantly.</p>
+          <div className="landing-hero-trustline">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+              <path d="M9 12l2 2 4-4" />
+            </svg>
+            <span>No signup required. Works with Gmail, Outlook, Apple Mail. Instant preview.</span>
+          </div>
           <div className="landing-hero-actions">
             <Link className="landing-cta-btn" to="/playground">
               Start Compiling
