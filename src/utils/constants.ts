@@ -4,6 +4,8 @@ export const DEBOUNCE_MS = 500;
 export const STORAGE_KEY_INPUT = 'email-compiler-input';
 export const STORAGE_KEY_VIEWPORT = 'email-compiler-viewport';
 export const STORAGE_KEY_DISMISSED_WARNINGS = 'email-compiler-dismissed';
+export const STORAGE_KEY_BUILDER_DATA = 'email-builder-data';
+export const STORAGE_KEY_EDITOR_MODE = 'email-editor-mode';
 
 export const UNSUPPORTED_TAGS = ['script', 'iframe', 'object', 'embed', 'form', 'video', 'audio', 'source', 'track', 'canvas', 'svg', 'math'];
 

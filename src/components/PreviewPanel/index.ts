@@ -1,1 +1,1 @@
-export { PreviewPanel } from './PreviewPanel';
+export { PreviewPanel, CodeView, JsonView } from './PreviewPanel';

@@ -1,6 +1,8 @@
-import { useState, useCallback } from 'react';
-import { Link } from 'react-router-dom';
-import { useTheme } from '../../hooks/useTheme';
+import { useState, useCallback } from "react";
+import { Link } from "react-router-dom";
+import { useTheme } from "../../hooks/useTheme";
+
+type EditorMode = "code" | "builder";
 
 interface ToolbarProps {
   warningCount: number;
@@ -10,14 +12,16 @@ interface ToolbarProps {
   onClear: () => void;
   onReset: () => void;
   backLink?: string;
+  mode: EditorMode;
+  onModeChange: (mode: EditorMode) => void;
 }
 
-export function Toolbar({ warningCount, isCompiling, onCompile, onCopy, onClear, onReset, backLink }: ToolbarProps) {
+export function Toolbar({ warningCount, isCompiling, onCompile, onCopy, onClear, onReset, backLink, mode: editorMode, onModeChange }: ToolbarProps) {
   const [compileFeedback, setCompileFeedback] = useState(false);
   const [copyFeedback, setCopyFeedback] = useState(false);
-  const { mode, cycleTheme } = useTheme();
+  const { mode: themeMode, cycleTheme } = useTheme();
 
-  const themeIcon = mode === 'light' ? 'sun' : mode === 'dark' ? 'moon' : 'monitor';
+  const themeIcon = themeMode === "light" ? "sun" : themeMode === "dark" ? "moon" : "monitor";
 
   const handleCompile = useCallback(() => {
     onCompile();
@@ -43,10 +47,20 @@ export function Toolbar({ warningCount, isCompiling, onCompile, onCopy, onClear,
         )}
         <h1 className="toolbar-title">Maillet Playground</h1>
       </div>
+      <div className="toolbar-center">
+        <div className="mode-toggle">
+          <button className={`mode-toggle-btn ${editorMode === "code" ? "active" : ""}`} onClick={() => onModeChange("code")} type="button">
+            Editor
+          </button>
+          <button className={`mode-toggle-btn ${editorMode === "builder" ? "active" : ""}`} onClick={() => onModeChange("builder")} type="button">
+            Builder
+          </button>
+        </div>
+      </div>
       <div className="toolbar-right">
         {isCompiling && <span className="toolbar-status">Compiling...</span>}
-        <button className="theme-toggle" onClick={cycleTheme} type="button" title={`Theme: ${mode}`}>
-          {themeIcon === 'sun' && (
+        <button className="theme-toggle" onClick={cycleTheme} type="button" title={`Theme: ${themeMode}`}>
+          {themeIcon === "sun" && (
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
               <circle cx="12" cy="12" r="5" />
               <line x1="12" y1="1" x2="12" y2="3" />
@@ -59,12 +73,12 @@ export function Toolbar({ warningCount, isCompiling, onCompile, onCopy, onClear,
               <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
             </svg>
           )}
-          {themeIcon === 'moon' && (
+          {themeIcon === "moon" && (
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
               <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
             </svg>
           )}
-          {themeIcon === 'monitor' && (
+          {themeIcon === "monitor" && (
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
               <rect x="2" y="3" width="20" height="14" rx="2" ry="2" />
               <line x1="8" y1="21" x2="16" y2="21" />
@@ -72,19 +86,11 @@ export function Toolbar({ warningCount, isCompiling, onCompile, onCopy, onClear,
             </svg>
           )}
         </button>
-        <button
-          className={`toolbar-btn ${hasErrors ? 'has-warnings' : ''} ${compileFeedback ? 'feedback-active' : ''}`}
-          onClick={handleCompile}
-          type="button"
-        >
-          {compileFeedback ? 'Compiled!' : 'Compile Now'}
+        <button className={`toolbar-btn ${hasErrors ? "has-warnings" : ""} ${compileFeedback ? "feedback-active" : ""}`} onClick={handleCompile} type="button">
+          {compileFeedback ? "Compiled!" : "Compile Now"}
         </button>
-        <button
-          className={`toolbar-btn ${copyFeedback ? 'feedback-active' : ''}`}
-          onClick={handleCopy}
-          type="button"
-        >
-          {copyFeedback ? 'Copied!' : 'Copy HTML'}
+        <button className={`toolbar-btn ${copyFeedback ? "feedback-active" : ""}`} onClick={handleCopy} type="button">
+          {copyFeedback ? "Copied!" : "Copy HTML"}
         </button>
         <button className="toolbar-btn" onClick={onClear} type="button">
           Clear
