@@ -140,14 +140,59 @@ export function LandingPage() {
           <div className={`landing-feature-card ${activeFeature === 0 ? "active" : ""}`} onMouseEnter={() => setActiveFeature(0)} onMouseLeave={() => setActiveFeature(null)}>
             <div className="landing-feature-icon">
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                <rect x="3" y="3" width="7" height="7" />
+                <rect x="14" y="3" width="7" height="7" />
+                <rect x="14" y="14" width="7" height="7" />
+                <rect x="3" y="14" width="7" height="7" />
+              </svg>
+            </div>
+            <h3>Visual Drag & Drop Builder</h3>
+            <p>Build email templates visually — drag blocks from the sidebar, drop them into columns, and see live previews instantly.</p>
+          </div>
+          <div className={`landing-feature-card ${activeFeature === 1 ? "active" : ""}`} onMouseEnter={() => setActiveFeature(1)} onMouseLeave={() => setActiveFeature(null)}>
+            <div className="landing-feature-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z" />
+                <polyline points="14 2 14 8 20 8" />
+                <line x1="16" y1="13" x2="8" y2="13" />
+                <line x1="16" y1="17" x2="8" y2="17" />
+              </svg>
+            </div>
+            <h3>JSON-to-HTML Compilation</h3>
+            <p>Builder output compiles from structured JSON into email-safe table-based HTML, passed through the full compiler pipeline.</p>
+          </div>
+          <div className={`landing-feature-card ${activeFeature === 2 ? "active" : ""}`} onMouseEnter={() => setActiveFeature(2)} onMouseLeave={() => setActiveFeature(null)}>
+            <div className="landing-feature-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                 <rect x="2" y="3" width="20" height="14" rx="2" />
                 <path d="M8 21h8M12 17v4" />
               </svg>
             </div>
-            <h3>Live Preview</h3>
-            <p>See your compiled email template update in real time as you type, with desktop and mobile viewport toggle.</p>
+            <h3>Preview, Code & JSON Views</h3>
+            <p>Toggle between rendered preview, compiled HTML source, and raw builder JSON — with desktop and mobile viewport modes.</p>
           </div>
-          <div className={`landing-feature-card ${activeFeature === 1 ? "active" : ""}`} onMouseEnter={() => setActiveFeature(1)} onMouseLeave={() => setActiveFeature(null)}>
+          <div className={`landing-feature-card ${activeFeature === 3 ? "active" : ""}`} onMouseEnter={() => setActiveFeature(3)} onMouseLeave={() => setActiveFeature(null)}>
+            <div className="landing-feature-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                <rect x="3" y="3" width="18" height="18" rx="2" />
+                <path d="M3 9h18" />
+                <path d="M9 21V9" />
+              </svg>
+            </div>
+            <h3>Block-Based Editing</h3>
+            <p>Configure every block — text, heading, image, button, link, divider, spacer, and columns — with full style controls.</p>
+          </div>
+          <div className={`landing-feature-card ${activeFeature === 4 ? "active" : ""}`} onMouseEnter={() => setActiveFeature(4)} onMouseLeave={() => setActiveFeature(null)}>
+            <div className="landing-feature-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                <rect x="3" y="3" width="7" height="18" rx="1" />
+                <rect x="14" y="3" width="7" height="18" rx="1" />
+              </svg>
+            </div>
+            <h3>Column Layouts</h3>
+            <p>Add 1, 2, or 3-column layouts with adjustable gaps. Drop any block into any column with full drag-and-drop support.</p>
+          </div>
+          <div className={`landing-feature-card ${activeFeature === 5 ? "active" : ""}`} onMouseEnter={() => setActiveFeature(5)} onMouseLeave={() => setActiveFeature(null)}>
             <div className="landing-feature-icon">
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                 <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />
@@ -156,7 +201,7 @@ export function LandingPage() {
             <h3>Flex & Grid to Tables</h3>
             <p>Automatically converts display:flex and display:grid into email-safe table layouts with proper column widths.</p>
           </div>
-          <div className={`landing-feature-card ${activeFeature === 2 ? "active" : ""}`} onMouseEnter={() => setActiveFeature(2)} onMouseLeave={() => setActiveFeature(null)}>
+          <div className={`landing-feature-card ${activeFeature === 6 ? "active" : ""}`} onMouseEnter={() => setActiveFeature(6)} onMouseLeave={() => setActiveFeature(null)}>
             <div className="landing-feature-icon">
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                 <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
@@ -165,7 +210,7 @@ export function LandingPage() {
             <h3>CSS Inlining</h3>
             <p>All CSS is automatically inlined into style attributes, exactly how email clients require it.</p>
           </div>
-          <div className={`landing-feature-card ${activeFeature === 3 ? "active" : ""}`} onMouseEnter={() => setActiveFeature(3)} onMouseLeave={() => setActiveFeature(null)}>
+          <div className={`landing-feature-card ${activeFeature === 7 ? "active" : ""}`} onMouseEnter={() => setActiveFeature(7)} onMouseLeave={() => setActiveFeature(null)}>
             <div className="landing-feature-icon">
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                 <path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z" />
@@ -176,7 +221,7 @@ export function LandingPage() {
             <h3>Smart Warnings</h3>
             <p>Real-time warnings for unsupported CSS, missing alt text, unsafe links, and more — with auto-fixes where possible.</p>
           </div>
-          <div className={`landing-feature-card ${activeFeature === 4 ? "active" : ""}`} onMouseEnter={() => setActiveFeature(4)} onMouseLeave={() => setActiveFeature(null)}>
+          <div className={`landing-feature-card ${activeFeature === 8 ? "active" : ""}`} onMouseEnter={() => setActiveFeature(8)} onMouseLeave={() => setActiveFeature(null)}>
             <div className="landing-feature-icon">
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                 <circle cx="12" cy="12" r="3" />
@@ -186,7 +231,7 @@ export function LandingPage() {
             <h3>Auto-Fixes</h3>
             <p>Strips scripts, converts semantic HTML5 elements, sanitizes links, replaces unsafe fonts — all automatically.</p>
           </div>
-          <div className={`landing-feature-card ${activeFeature === 5 ? "active" : ""}`} onMouseEnter={() => setActiveFeature(5)} onMouseLeave={() => setActiveFeature(null)}>
+          <div className={`landing-feature-card ${activeFeature === 9 ? "active" : ""}`} onMouseEnter={() => setActiveFeature(9)} onMouseLeave={() => setActiveFeature(null)}>
             <div className="landing-feature-icon">
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                 <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
@@ -196,62 +241,7 @@ export function LandingPage() {
             <h3>100% Client-Side</h3>
             <p>Everything runs in your browser. No server, no uploads, no tracking. Your templates never leave your machine.</p>
           </div>
-          <div className={`landing-feature-card ${activeFeature === 6 ? "active" : ""}`} onMouseEnter={() => setActiveFeature(6)} onMouseLeave={() => setActiveFeature(null)}>
-            <div className="landing-feature-icon">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                <path d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                <path d="M9 12l2 2 4-4" />
-              </svg>
-            </div>
-            <h3>Link Sanitization</h3>
-            <p>Strips javascript: and data: URLs, auto-adds target="_blank" and rel="noopener noreferrer" for security.</p>
-          </div>
-          <div className={`landing-feature-card ${activeFeature === 7 ? "active" : ""}`} onMouseEnter={() => setActiveFeature(7)} onMouseLeave={() => setActiveFeature(null)}>
-            <div className="landing-feature-icon">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                <path d="M4 7V4h16v3" />
-                <path d="M9 20h6" />
-                <path d="M12 4v16" />
-              </svg>
-            </div>
-            <h3>Font Safety</h3>
-            <p>Replaces unsupported fonts like Google Fonts with safe system fallbacks — Arial, Helvetica, Georgia, and more.</p>
-          </div>
-          <div className={`landing-feature-card ${activeFeature === 8 ? "active" : ""}`} onMouseEnter={() => setActiveFeature(8)} onMouseLeave={() => setActiveFeature(null)}>
-            <div className="landing-feature-icon">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                <rect x="3" y="3" width="18" height="18" rx="2" />
-                <path d="M3 9h18" />
-                <path d="M9 21V9" />
-              </svg>
-            </div>
-            <h3>Code Formatting</h3>
-            <p>One-click code formatting with Monaco Editor. Supports syntax highlighting, auto-indent, and keyboard shortcuts.</p>
-          </div>
-          <div className={`landing-feature-card ${activeFeature === 9 ? "active" : ""}`} onMouseEnter={() => setActiveFeature(9)} onMouseLeave={() => setActiveFeature(null)}>
-            <div className="landing-feature-icon">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                <path d="M19 21H5a2 2 0 01-2-2V5a2 2 0 012-2h11l5 5v11a2 2 0 01-2 2z" />
-                <polyline points="17 21 17 13 7 13 7 21" />
-                <polyline points="7 3 7 8 15 8" />
-              </svg>
-            </div>
-            <h3>Auto-Save</h3>
-            <p>Your work is automatically saved in localStorage. Pick up right where you left off, even after closing the browser.</p>
-          </div>
           <div className={`landing-feature-card ${activeFeature === 10 ? "active" : ""}`} onMouseEnter={() => setActiveFeature(10)} onMouseLeave={() => setActiveFeature(null)}>
-            <div className="landing-feature-icon">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z" />
-                <polyline points="14 2 14 8 20 8" />
-                <line x1="16" y1="13" x2="8" y2="13" />
-                <line x1="16" y1="17" x2="8" y2="17" />
-              </svg>
-            </div>
-            <h3>Media Query Support</h3>
-            <p>Preserves @media queries in style blocks for progressive enhancement in clients that support them.</p>
-          </div>
-          <div className={`landing-feature-card ${activeFeature === 11 ? "active" : ""}`} onMouseEnter={() => setActiveFeature(11)} onMouseLeave={() => setActiveFeature(null)}>
             <div className="landing-feature-icon">
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                 <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4" />
@@ -261,6 +251,17 @@ export function LandingPage() {
             </div>
             <h3>Copy & Export</h3>
             <p>One-click copy of compiled HTML to clipboard. Clean output ready to paste into your email service provider.</p>
+          </div>
+          <div className={`landing-feature-card ${activeFeature === 11 ? "active" : ""}`} onMouseEnter={() => setActiveFeature(11)} onMouseLeave={() => setActiveFeature(null)}>
+            <div className="landing-feature-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                <rect x="3" y="3" width="18" height="18" rx="2" />
+                <path d="M3 9h18" />
+                <path d="M9 21V9" />
+              </svg>
+            </div>
+            <h3>Code Editor Mode</h3>
+            <p>Prefer writing HTML directly? Switch to Editor mode with Monaco Editor, live preview, and full compiler pipeline.</p>
           </div>
         </div>
       </section>
